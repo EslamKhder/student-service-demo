@@ -13,4 +13,15 @@ public interface StudentService {
     void delete(Long id) throws SystemException;
 
     List<Student> fetchALLStudent() throws SystemException;
+
+    List<Student> fetchALLStudentByIds(List<Long> ids) throws SystemException;
+
+    Boolean isExist(Long id);
+
+    List<Student> save(List<Student> students) throws SystemException;
+
+
+    List<Student> findByName(String name) throws SystemException;
+
+    List<Student> findByNameLike(String name);
 }

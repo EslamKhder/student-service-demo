@@ -45,5 +45,28 @@ public class StudentServiceImpl implements StudentService {
         return studentRepo.findAll();
     }
 
+    @Override
+    public List<Student> fetchALLStudentByIds(List<Long> ids) throws SystemException {
+        return studentRepo.findAllById(ids);
+    }
 
+    @Override
+    public Boolean isExist(Long id) {
+        return studentRepo.existsById(id);
+    }
+
+    @Override
+    public List<Student> save(List<Student> students) throws SystemException {
+        return studentRepo.saveAll(students);
+    }
+
+    @Override
+    public List<Student> findByName(String name) throws SystemException {
+        return studentRepo.findByName(name);
+    }
+
+    @Override
+    public List<Student> findByNameLike(String name)  {
+        return studentRepo.findByNameLike(name);
+    }
 }
